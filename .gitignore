@@ -1,8 +1,11 @@
-#ignore the virtual env
+#ignore my virtual env
 venv
 
 #ignore the cache files
 *.pyc
 
-#ignore vs codes configs
+#ignore my vs codes configs
 .vscode
+
+#ignore my env vars
+.env
