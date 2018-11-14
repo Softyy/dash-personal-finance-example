@@ -9,3 +9,6 @@ venv
 
 #ignore my env vars
 .env
+
+#ignore my cc data
+test_data

@@ -1,23 +1,24 @@
 import dash_core_components as dcc
 import dash_html_components as html
 
-def render():
-    return html.Div(children=[
-        html.H1(children='Hello Dash'),
+from ..managers.graph import createScatterTrace
 
-        html.Div(children='''
-            Dash: A web application framework for Python.
-        '''),
+from ..consts import WEBAPP_TITLE, WEBAPP_SUBTITLE, WEBAPP_GRAPH_TITLE
+
+def render(x,y):
+    return html.Div(children=[
+        html.H1(children=WEBAPP_TITLE),
+
+        html.H5(children=WEBAPP_SUBTITLE),
 
         dcc.Graph(
             id='example-graph',
             figure={
                 'data': [
-                    {'x': [1, 2, 3], 'y': [4, 1, 2], 'type': 'bar', 'name': 'SF'},
-                    {'x': [1, 2, 3], 'y': [2, 4, 5], 'type': 'bar', 'name': u'Montréal'},
+                    createScatterTrace(x,y)
                 ],
                 'layout': {
-                    'title': 'Dash Data Visualization'
+                    'title': WEBAPP_GRAPH_TITLE
                 }
             }
         )
