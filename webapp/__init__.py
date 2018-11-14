@@ -11,7 +11,8 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 # load the data
 dm = DataManager()
-dm.load_test_data()
+dm.load_data()
 x,y = dm.get_charge_series_tuple()
+vendor_options = dm.get_vendor_options()
 
-app.layout = index.render(x,y)
+app.layout = index.render(x,y,vendor_options)
