@@ -1,14 +1,21 @@
-from dash.dependencies import Input,Output
+from dash.dependencies import Input,Output,State
 
 from webapp import app, dm
 
-from ..consts import VENDOR_SELECTOR_ID,OUTPUT_GRAPH_ID
+from datetime import datetime
+
+from ..consts import VENDOR_SELECTOR_ID,OUTPUT_GRAPH_ID,DATE_SELECTOR_ID
 
 from webapp.managers.graph import createFigure,createScatterTrace
 
 @app.callback(
     Output(OUTPUT_GRAPH_ID,'figure'),
-    [Input(VENDOR_SELECTOR_ID,'value')])
-def selector_change(selected_values):
-    x, y = dm.get_selected_charge_series_tuple(selected_values)
+    [Input(VENDOR_SELECTOR_ID,'value'),
+    Input(DATE_SELECTOR_ID, 'start_date'),Input(DATE_SELECTOR_ID, 'end_date')])
+def selector_change(selected_values,min_date,max_date):
+    #min_date = datetime.strftime(min_date,'%Y-%M-%d')
+    #max_date = datetime.strftime(max_date,'%Y-%M-%d')
+    print(min_date)
+    print(max_date)
+    x, y = dm.get_selected_charge_series_tuple(selected_values,min_date,max_date)
     return createFigure([createScatterTrace(x,y)])

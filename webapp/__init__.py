@@ -12,9 +12,8 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 # load the data
 dm = DataManager()
 dm.load_data()
-x,y = dm.get_charge_series_tuple()
-vendor_options = dm.get_vendor_options()
+x,y = dm.get_selected_charge_series_tuple()
 
-app.layout = index.render(x,y,vendor_options)
+app.layout = index.render(x,y,dm.get_vendor_options())
 
 from .callbacks import callback

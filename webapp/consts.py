@@ -23,4 +23,7 @@ VENDOR_SELECTOR_ID = 'vendor-selection'
 
 OUTPUT_GRAPH_ID = 'output-graph'
 
-MIN_DATE_SELECTOR = dt(2017,10,10)
+DATE_SELECTOR_ID = 'date-range'
+
+MIN_DATE_SELECTOR = dt(2017,10,10).strftime('%Y-%m-%d')
+MAX_DATE_SELECTOR = dt.today().strftime('%Y-%m-%d')
