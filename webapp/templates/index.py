@@ -1,8 +1,6 @@
 import dash_core_components as dcc
 import dash_html_components as html
 
-from datetime import datetime as dt
-
 from ..managers.graph import createScatterTrace,createFigure
 
 from ..consts import WEBAPP_TITLE, WEBAPP_SUBTITLE, MIN_DATE_SELECTOR,MAX_DATE_SELECTOR,VENDOR_TEST_OPTIONS,VENDOR_SELECTOR_ID,OUTPUT_GRAPH_ID,DATE_SELECTOR_ID
