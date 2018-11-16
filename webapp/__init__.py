@@ -16,3 +16,5 @@ x,y = dm.get_charge_series_tuple()
 vendor_options = dm.get_vendor_options()
 
 app.layout = index.render(x,y,vendor_options)
+
+from .callbacks import callback

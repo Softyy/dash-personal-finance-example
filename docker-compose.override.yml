@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  dash:
+    build: . # runs the Dockerfile located in the current directory.
+    volumes:
+      - .:/app # this binds the current directory to the folder /app in the container
+    ports:
+      - 8050:8050 # this maps port 8050 on the container to port 8050 on our host.
+    environment:
+      - FLASK_ENV=development # this is a env var we've added to the container.
+    command: ["python", "run.py"] # this is an override of the CMD in the Dockerfile

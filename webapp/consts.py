@@ -19,4 +19,8 @@ VENDOR_TEST_OPTIONS = [
     {'label': 'Vendor 3', 'value': 3}
 ]
 
+VENDOR_SELECTOR_ID = 'vendor-selection'
+
+OUTPUT_GRAPH_ID = 'output-graph'
+
 MIN_DATE_SELECTOR = dt(2017,10,10)

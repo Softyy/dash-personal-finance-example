@@ -1,0 +1,14 @@
+# don't need to included this since we're not doing anything git related in the container.
+.gitignore
+
+# don't need a virtual env in the container, the dockerfile builds one for the code.
+venv
+
+# don't need my editor configs
+.vscode
+
+# don't need the read me
+README.md
+
+# ignore all python cache files.
+**/*.pyc

@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  dash:
+    image: cjadkins/dash-finance-app
+    links:
+      - db
+      - cache
+  
+  db:
+    image: postgres:latest
+
+  cache:
+    image: redis:latest
