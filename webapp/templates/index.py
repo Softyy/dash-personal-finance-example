@@ -3,7 +3,7 @@ import dash_html_components as html
 
 from ..managers.graph import createScatterTrace,createFigure
 
-from ..consts import WEBAPP_TITLE, WEBAPP_SUBTITLE, MIN_DATE_SELECTOR,MAX_DATE_SELECTOR,VENDOR_TEST_OPTIONS,VENDOR_SELECTOR_ID,OUTPUT_GRAPH_ID,DATE_SELECTOR_ID
+from ..consts import WEBAPP_TITLE,WEBAPP_SUBTITLE,MIN_DATE_SELECTOR,MAX_DATE_SELECTOR,VENDOR_TEST_OPTIONS,VENDOR_SELECTOR_ID,OUTPUT_GRAPH_ID,DATE_SELECTOR_ID
 
 def render(x,y,vendor_options=VENDOR_TEST_OPTIONS):
     return html.Div(children=[

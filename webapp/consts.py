@@ -1,6 +1,6 @@
 from datetime import datetime as dt
 
-DATA_COLUMNS = ['Date','Vendor','Charge','Credit','Total Balance']
+DATA_COLUMNS = ['date','vendor','charge','credit','total_balance']
 DATA_DATE = DATA_COLUMNS[0]
 DATA_CHARGE = DATA_COLUMNS[2]
 DATA_VENDOR = DATA_COLUMNS[1]
@@ -27,3 +27,5 @@ DATE_SELECTOR_ID = 'date-range'
 
 MIN_DATE_SELECTOR = dt(2017,10,10).strftime('%Y-%m-%d')
 MAX_DATE_SELECTOR = dt.today().strftime('%Y-%m-%d')
+
+TRANSACTION_TABLE_NAME = 'transactions'

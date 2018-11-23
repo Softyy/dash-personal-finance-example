@@ -2,8 +2,8 @@ FROM python:alpine3.7
 
 LABEL version="1.0" description="a simple personal finance dashboard" maintainer="adkincj@gmail.com"
 
-# adding the C binaries for pandas 
-RUN apk --update add --no-cache g++
+# adding the C binaries for pandas and postgres drivers
+RUN apk --update add --no-cache g++ libpq postgresql-dev
 
 # creating the directory for our code
 RUN mkdir -p /app
