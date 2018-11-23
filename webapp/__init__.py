@@ -27,12 +27,11 @@ cache.init_app(app.server, config=CACHE_CONFIG)
 
 # load the data
 from .managers.data import DataManager
+
 dm = DataManager()
 
 # check if database is up and running.
 import webapp.startup
-
-dm.load_from_db()
 
 x,y = dm.get_charge_series_tuple()
 

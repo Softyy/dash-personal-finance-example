@@ -10,8 +10,10 @@ class DataManager():
     def load_data(self):
         files_path = os.path.join(os.getcwd(),"webapp","test_data")
         all_files = glob.glob(os.path.join(files_path, "*.csv"))
-        self.data = pd.concat((pd.read_csv(f,names=DATA_COLUMNS) for f in all_files))
-        self.data[DATA_DATE] = pd.to_datetime(self.data[DATA_DATE]).dt.date
+        data = pd.concat((pd.read_csv(f,names=DATA_COLUMNS) for f in all_files))
+        data[DATA_DATE] = pd.to_datetime(data[DATA_DATE]).dt.date
+        return data
+
 
     @cache.memoize()
     def load_from_db(self):

@@ -6,8 +6,7 @@ db.create_all()
 
 #populate the database if the data isn't there.
 if not Transaction.query.first():
-    dm.load_data()
-    dm.data.to_sql( name=Transaction.__tablename__, 
+    dm.load_data().to_sql( name=Transaction.__tablename__, 
                     con=db.engine, 
                     if_exists = 'append', 
                     index=False
