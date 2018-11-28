@@ -22,11 +22,25 @@ class DataManager():
     
     def get_charge_series_tuple(self,data=pd.DataFrame(),min_date=None,max_date=None):
         """ 
-        Input: pd.DataFrame, if none is provided it defaults to self.data
-        
+        Description
+        -----------
         Separates the date and charge values for easy plotting from the loaded data.
 
-        returns (date_array,charge_array)
+        Parameters
+        ----------
+        data : pd.DataFrame
+            Data to be separated into an array of charges, and an array of dates
+        min_date : Datetime.Date
+            Starting date for the date array.
+        max_date : Datetime.Date
+            Starting date for the date array.
+        
+        Returns
+        -------
+        date_array : [Dateime.Date]
+            An array with range min_date to max_date
+        charge_array : [float]
+            An array with the total charges accumulated on the paired date 
         """
         # take the default argument to be the data frame within the manager.
         if data.empty:
