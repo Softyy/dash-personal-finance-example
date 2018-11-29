@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  dash:
-    ports:
-      - 80:8050
-    environment:
-      - FLASK_ENV=production
